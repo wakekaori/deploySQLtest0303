@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container my-3 py-4">
+    <div class="row">
+        <button type="submit" class="btn btn-warning col-md-2">Apply</button>
+        <table class="table table-sm table-striped my-4">
+            <thead class="table-dark">
+                <tr>
+                    <th class="col-1">#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td class="col-1">{{ user.id }}</td>
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
