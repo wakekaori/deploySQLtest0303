@@ -3,7 +3,17 @@
 
 <div class="container my-3 py-4">
     <div class="row">
-        <button type="submit" class="btn btn-warning col-md-2">Apply</button>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-control form-control-lg col-4 mb-3">
+                {{ form.firstname.label }} {{ form.firstname() }}
+            </div>
+            <div class="form-control form-control-lg col-4 mb-3">
+                {{ form.lastname.label }} {{ form.lastname() }}
+            </div>
+            {{ form.submit(class="btn btn-warning col-2") }}
+        </form>
+
         <table class="table table-sm table-striped my-4">
             <thead class="table-dark">
                 <tr>
